@@ -49,18 +49,23 @@ function requestInfo(){
   // get length of password
   var length = getPassLength();
 
-  console.log("Given length is: " + length);
+  // test
+  console.log("Given length is: " + length + "\nType: " + typeof length);
+
   // If length is not appropriate, it ends early
   if(length == 0){
     return;
   }
+
+
 }
 
 function getPassLength(){
   // pull up prompt
-  var length = prompt("How long would you like your password?", "Enter number here");
+  var length = Number(prompt("How long would you like your password?", "Enter number here"));
 
-  if(length < 8 || length > 128)
+  // checks if length is not a number between/including 8 and 128
+  if(length < 8 || length > 128 || Number.isNaN(length))
   {
     alert("Please enter a number larger than 8 and smaller than 128.");
   }
@@ -68,6 +73,6 @@ function getPassLength(){
   {
     return length;
   }
-  
+  // Returns 0 if value is not appropriate
   return 0;
 }
