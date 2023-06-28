@@ -1,4 +1,19 @@
-// Assignment Code
+// have const arrays for numbers, lower, upper, special
+
+// hit button prompt for number
+
+// if <8 or >128 alert
+
+// bring up confirms if number works
+// confirm lowercase
+// confirm uppercase
+// confirm numeric
+// confirm special characters
+
+// create array
+// print array to screen
+
+// How JavaScript talks to html on page
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
@@ -17,6 +32,8 @@ function writePassword() {
 function generatePassword(){
   // Temp value
   var randPass = "Hello";
+
+
 
   // test
   console.log(randPass);
