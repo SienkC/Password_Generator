@@ -1,4 +1,6 @@
 // have const arrays for numbers, lower, upper, special
+// const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", ""]
+
 
 // hit button prompt for number
 
@@ -33,11 +35,39 @@ function generatePassword(){
   // Temp value
   var randPass = "Hello";
 
-
+  // function for texts boxes
+  requestInfo();
 
   // test
   console.log(randPass);
 
   // Sends random password
   return randPass;
+}
+
+function requestInfo(){
+  // get length of password
+  var length = getPassLength();
+
+  console.log("Given length is: " + length);
+  // If length is not appropriate, it ends early
+  if(length == 0){
+    return;
+  }
+}
+
+function getPassLength(){
+  // pull up prompt
+  var length = prompt("How long would you like your password?", "Enter number here");
+
+  if(length < 8 || length > 128)
+  {
+    alert("Please enter a number larger than 8 and smaller than 128.");
+  }
+  else
+  {
+    return length;
+  }
+  
+  return 0;
 }
