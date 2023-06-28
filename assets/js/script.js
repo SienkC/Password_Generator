@@ -12,3 +12,14 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+function generatePassword(){
+  // Temp value
+  var randPass = "Hello";
+
+  console.log(randPass);
+
+  
+  return ;
+  // randPass;
+}
