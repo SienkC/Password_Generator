@@ -2,11 +2,6 @@
 // const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", ""]
 
 
-// hit button prompt for number
-
-// if <8 or >128 alert
-
-// bring up confirms if number works
 // confirm lowercase
 // confirm uppercase
 // confirm numeric
@@ -58,6 +53,7 @@ function requestInfo(){
   }
 
 
+
 }
 
 function getPassLength(){
@@ -76,3 +72,43 @@ function getPassLength(){
   // Returns 0 if value is not appropriate
   return 0;
 }
+
+function passConditions(){
+  // lowercase
+  if(confirm("Do you want your password to have lowercase letters?"))
+  {
+    // They pressed okay
+  }
+  else{
+    // They pressed cancel
+  }
+
+  // uppercase
+  if(confirm("Do you want your password to have uppercase letters?"))
+  {
+    // if okay
+  }
+  else{
+    // if cancel
+  }
+
+  // numbers
+  if(confirm("Do you want your password to have numbers?"))
+  {
+    // if okay
+  }
+  else{
+    // if cancel
+  }
+
+  // special characters
+  if(confirm("Do you want your password to have special characters?"))
+  {
+    // if okay
+  }
+  else{
+    // if cancel
+  }
+
+}
+
