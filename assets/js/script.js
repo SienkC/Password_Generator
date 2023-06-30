@@ -2,15 +2,11 @@
 // const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", ""]
 
 
-// confirm lowercase
-// confirm uppercase
-// confirm numeric
-// confirm special characters
-
 // create array
 // print array to screen
 
 var passCondition = {
+  length: 0,
   isLower: false,
   isUpper: false,
   isNum: false,
@@ -48,37 +44,40 @@ function generatePassword(){
 }
 
 function requestInfo(){
-  // get length of password
-  var length = getPassLength();
+  // get length of password from user
+  getPassLength();
   
-
   // test
-  console.log("Given length is: " + length + "\nType: " + typeof length);
+  console.log("Given length is: " + passCondition.length + "\nType: " + typeof passCondition.length );
 
   // If length is not appropriate, it ends early
-  if(length == 0){
+  if(passCondition.length == 0){
     return;
   }
 
+  // Get type of characters from user
   passConditions();
 
 }
 
 function getPassLength(){
   // pull up prompt
-  var length = Number(prompt("How long would you like your password?", "Enter number here"));
+  passCondition.length  = Number(prompt("How long would you like your password?", "Enter number here"));
 
   // checks if length is not a number between/including 8 and 128
-  if(length < 8 || length > 128 || Number.isNaN(length))
+  if(passCondition.length  < 8 || passCondition.length  > 128 || Number.isNaN(passCondition.length ))
   {
     alert("Please enter a number larger than 8 and smaller than 128.");
+
+    // calls function again to get correct input
+    getPassLength();
   }
   else
   {
-    return length;
+    return;
   }
   // Returns 0 if value is not appropriate
-  return 0;
+  return;
 }
 
 function passConditions(){
@@ -139,6 +138,7 @@ function passConditions(){
     console.log(Object.values(passCondition).includes(true));
   }
 
+  // test
   console.log(passCondition);
 
   return;
