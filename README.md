@@ -22,7 +22,7 @@ After password details are entered, a password will be generated in the dashed b
 
 Link to the webpage: [Password Generator](https://sienkc.github.io/Password_Generator/)
 
-Screenshot at with generated random password:
+Screenshot with generated random password:
 ![Screenshot of Webpage with password](assets/images/screenshot.PNG)
 
 ## Credits
