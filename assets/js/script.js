@@ -10,6 +10,13 @@
 // create array
 // print array to screen
 
+var passCondition = {
+  isLower: false,
+  isUpper: false,
+  isNum: false,
+  isSpecial: false
+};
+
 // How JavaScript talks to html on page
 var generateBtn = document.querySelector("#generate");
 
@@ -43,6 +50,7 @@ function generatePassword(){
 function requestInfo(){
   // get length of password
   var length = getPassLength();
+  
 
   // test
   console.log("Given length is: " + length + "\nType: " + typeof length);
@@ -52,7 +60,7 @@ function requestInfo(){
     return;
   }
 
-
+  passConditions();
 
 }
 
@@ -78,37 +86,61 @@ function passConditions(){
   if(confirm("Do you want your password to have lowercase letters?"))
   {
     // They pressed okay
+    passCondition.isLower = true;
   }
   else{
     // They pressed cancel
+    passCondition.isLower = false;
   }
 
   // uppercase
   if(confirm("Do you want your password to have uppercase letters?"))
   {
     // if okay
+    passCondition.isUpper = true;
   }
   else{
     // if cancel
+    passCondition.isUpper = false;
   }
 
   // numbers
   if(confirm("Do you want your password to have numbers?"))
   {
     // if okay
+    passCondition.isNum = true;
   }
   else{
     // if cancel
+    passCondition.isNum = false;
   }
 
   // special characters
   if(confirm("Do you want your password to have special characters?"))
   {
     // if okay
+    passCondition.isSpecial = true;
   }
   else{
     // if cancel
+    passCondition.isSpecial = false;
   }
 
+  // checks if user said cancel to all
+  if(!(Object.values(passCondition).includes(true)))
+  {
+    alert("Please click 'OK' on at least one option.");
+
+    // calls function again
+    passConditions();
+
+    // test
+    console.log("All false");
+    console.log(Object.values(passCondition).includes(true));
+  }
+
+  console.log(passCondition);
+
+  return;
 }
 
