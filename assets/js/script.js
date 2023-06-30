@@ -1,10 +1,10 @@
-// have const arrays for numbers, lower, upper, special
-// const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", ""]
+// const arrays for lower, upper, numbers, special characters
+const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const special = ["!", "#", "$", "%", "&", "*", "?", "@", "^"];
 
-
-// create array
-// print array to screen
-
+// user input obj
 var passCondition = {
   length: 0,
   isLower: false,
@@ -36,51 +36,47 @@ function generatePassword(){
   // function for texts boxes
   requestInfo();
 
-  // create random password from given info
-  // for loop using given length
-  // true(1)*num false(0)*num
-  // set length for array using given length
-  // while array is not full
-  // use math.rand(ceiling) to pick 1,2,3,4 from passCondition
-  // use math.rand*length of char array
-
-
-  // check for all if true
-  // add random char from arrays
-  // while loop stop when new array is full <-put break for full in each if statement
+  // test
+  // randPass.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
+  console.log("passcond length: " + passCondition.length);
+  console.log("randpass length: " + randPass.length);
 
   // loop while array length is less than user length input
   while(randPass.length < passCondition.length)
   {
     // if user wants lowercase
-    if(passCondition.isLower){
+    if(passCondition.isLower && Math.floor(Math.random() * 2)){
       // add random lowercase to array
+      randPass.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
       // check length and stop loop if needed
-      if(randPass.length >= length){
+      if(randPass.length >= passCondition.length){
         break;
       }
     }
     // if user wants uppercase
-    if(passCondition.isUpper){
+    if(passCondition.isUpper && Math.floor(Math.random() * 2)){
       // add rand uppercase to array
+      randPass.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
       // check length and stop loop if needed
-      if(randPass.length >= length){
+      if(randPass.length >= passCondition.length){
         break;
       }
     }
     // if user wants numbers
-    if(passCondition.isNum){
+    if(passCondition.isNum && Math.floor(Math.random() * 2)){
       // add rand num to array
+      randPass.push(numbers[Math.floor(Math.random() * numbers.length)]);
       // check length and stop loop if needed
-      if(randPass.length >= length){
+      if(randPass.length >= passCondition.length){
         break;
       }
     }
     // if user wants special characters
-    if(passCondition.isSpecial){
+    if(passCondition.isSpecial && Math.floor(Math.random() * 2)){
       // add rand spec to array
+      randPass.push(special[Math.floor(Math.random() * special.length)]);
       // check length and stop loop if needed
-      if(randPass.length >= length){
+      if(randPass.length >= passCondition.length){
         break;
       }
     }
