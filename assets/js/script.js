@@ -51,21 +51,29 @@ function requestInfo(){
   console.log("Given length is: " + passCondition.length + "\nType: " + typeof passCondition.length );
 
   // If length is not appropriate, it ends early
-  if(passCondition.length == 0){
+  if(passCondition.length === 0){
     return;
   }
 
   // Get type of characters from user
   passConditions();
-
 }
 
 function getPassLength(){
   // pull up prompt
-  passCondition.length  = Number(prompt("How long would you like your password?", "Enter number here"));
+  var userInput = prompt("How long would you like your password?", "Enter number here");
+  
+  passCondition.length  = Number(userInput);
 
+  console.log(passCondition.length);
+
+  // checks for cancel button and terminates
+  if(userInput === null)
+  {
+    return;
+  }
   // checks if length is not a number between/including 8 and 128
-  if(passCondition.length  < 8 || passCondition.length  > 128 || Number.isNaN(passCondition.length ))
+  else if(passCondition.length  < 8 || passCondition.length  > 128 || Number.isNaN(passCondition.length ))
   {
     alert("Please enter a number larger than 8 and smaller than 128.");
 
