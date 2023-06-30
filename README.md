@@ -20,7 +20,7 @@ When a value for length that fits the requirements is entered, four questions co
 
 After password details are entered, a password will be generated in the dashed box below "Generate a Password".
 
-Link to the webpage: [Password Generator]()
+Link to the webpage: [Password Generator](https://sienkc.github.io/Password_Generator/)
 
 Screenshot at with generated random password:
 ![Screenshot of Webpage with password](assets/images/screenshot.PNG)
