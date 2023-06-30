@@ -92,7 +92,7 @@ function requestInfo(){
   {
     return;
   }
-  
+
   // Get type of characters from user
   passConditions();
   return;
@@ -105,7 +105,6 @@ function getPassLength(){
   // turn input into number
   passCondition.length  = Number(userInput);
 
-  console.log(userInput);
   // checks for cancel button and terminates
   if(userInput === null)
   {
