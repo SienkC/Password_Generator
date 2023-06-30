@@ -31,7 +31,7 @@ function writePassword() {
 
 function generatePassword(){
   // Temp value
-  var randPass = "Hello";
+  var randPass = [];
 
   // function for texts boxes
   requestInfo();
@@ -48,6 +48,45 @@ function generatePassword(){
   // check for all if true
   // add random char from arrays
   // while loop stop when new array is full <-put break for full in each if statement
+
+  // loop while array length is less than user length input
+  while(randPass.length < passCondition.length)
+  {
+    // if user wants lowercase
+    if(passCondition.isLower){
+      // add random lowercase to array
+      // check length and stop loop if needed
+      if(randPass.length >= length){
+        break;
+      }
+    }
+    // if user wants uppercase
+    if(passCondition.isUpper){
+      // add rand uppercase to array
+      // check length and stop loop if needed
+      if(randPass.length >= length){
+        break;
+      }
+    }
+    // if user wants numbers
+    if(passCondition.isNum){
+      // add rand num to array
+      // check length and stop loop if needed
+      if(randPass.length >= length){
+        break;
+      }
+    }
+    // if user wants special characters
+    if(passCondition.isSpecial){
+      // add rand spec to array
+      // check length and stop loop if needed
+      if(randPass.length >= length){
+        break;
+      }
+    }
+    // test
+    console.log(randPass.length);
+  }
 
   // test
   console.log(randPass);
