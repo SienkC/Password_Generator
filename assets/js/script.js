@@ -87,6 +87,12 @@ function requestInfo(){
   // get length of password from user
   getPassLength();
 
+
+  if(passCondition.length === 0)
+  {
+    return;
+  }
+  
   // Get type of characters from user
   passConditions();
   return;
@@ -99,6 +105,7 @@ function getPassLength(){
   // turn input into number
   passCondition.length  = Number(userInput);
 
+  console.log(userInput);
   // checks for cancel button and terminates
   if(userInput === null)
   {
