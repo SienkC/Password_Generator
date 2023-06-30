@@ -36,6 +36,19 @@ function generatePassword(){
   // function for texts boxes
   requestInfo();
 
+  // create random password from given info
+  // for loop using given length
+  // true(1)*num false(0)*num
+  // set length for array using given length
+  // while array is not full
+  // use math.rand(ceiling) to pick 1,2,3,4 from passCondition
+  // use math.rand*length of char array
+
+
+  // check for all if true
+  // add random char from arrays
+  // while loop stop when new array is full <-put break for full in each if statement
+
   // test
   console.log(randPass);
 
@@ -63,6 +76,7 @@ function getPassLength(){
   // pull up prompt
   var userInput = prompt("How long would you like your password?", "Enter number here");
   
+  // turn input into number
   passCondition.length  = Number(userInput);
 
   console.log(passCondition.length);
@@ -84,8 +98,6 @@ function getPassLength(){
   {
     return;
   }
-  // Returns 0 if value is not appropriate
-  return;
 }
 
 function passConditions(){
