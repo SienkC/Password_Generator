@@ -19,7 +19,6 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -30,18 +29,13 @@ function writePassword() {
 }
 
 function generatePassword(){
-  // Temp value
+  // Array for password
   var randPass = [];
 
   // function for texts boxes
   requestInfo();
 
-  // test
-  // randPass.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
-  console.log("passcond length: " + passCondition.length);
-  console.log("randpass length: " + randPass.length);
-
-  // loop while array length is less than user length input
+  // loop while password length is less than user length input
   while(randPass.length < passCondition.length)
   {
     // if user wants lowercase
@@ -53,6 +47,7 @@ function generatePassword(){
         break;
       }
     }
+
     // if user wants uppercase
     if(passCondition.isUpper && Math.floor(Math.random() * 2)){
       // add rand uppercase to array
@@ -62,6 +57,7 @@ function generatePassword(){
         break;
       }
     }
+
     // if user wants numbers
     if(passCondition.isNum && Math.floor(Math.random() * 2)){
       // add rand num to array
@@ -71,6 +67,7 @@ function generatePassword(){
         break;
       }
     }
+
     // if user wants special characters
     if(passCondition.isSpecial && Math.floor(Math.random() * 2)){
       // add rand spec to array
@@ -80,31 +77,19 @@ function generatePassword(){
         break;
       }
     }
-    // test
-    console.log(randPass.length);
   }
 
-  // test
-  console.log(randPass);
-
-  // Sends random password
-  return randPass;
+  // Sends random password and converts to string (no commas)
+  return randPass.join("");
 }
 
 function requestInfo(){
   // get length of password from user
   getPassLength();
-  
-  // test
-  console.log("Given length is: " + passCondition.length + "\nType: " + typeof passCondition.length );
-
-  // If length is not appropriate, it ends early
-  if(passCondition.length === 0){
-    return;
-  }
 
   // Get type of characters from user
   passConditions();
+  return;
 }
 
 function getPassLength(){
@@ -113,8 +98,6 @@ function getPassLength(){
   
   // turn input into number
   passCondition.length  = Number(userInput);
-
-  console.log(passCondition.length);
 
   // checks for cancel button and terminates
   if(userInput === null)
@@ -137,8 +120,7 @@ function getPassLength(){
 
 function passConditions(){
   // lowercase
-  if(confirm("Do you want your password to have lowercase letters?"))
-  {
+  if(confirm("Do you want your password to have lowercase letters?")){
     // They pressed okay
     passCondition.isLower = true;
   }
@@ -148,8 +130,7 @@ function passConditions(){
   }
 
   // uppercase
-  if(confirm("Do you want your password to have uppercase letters?"))
-  {
+  if(confirm("Do you want your password to have uppercase letters?")){
     // if okay
     passCondition.isUpper = true;
   }
@@ -159,8 +140,7 @@ function passConditions(){
   }
 
   // numbers
-  if(confirm("Do you want your password to have numbers?"))
-  {
+  if(confirm("Do you want your password to have numbers?")){
     // if okay
     passCondition.isNum = true;
   }
@@ -170,8 +150,7 @@ function passConditions(){
   }
 
   // special characters
-  if(confirm("Do you want your password to have special characters?"))
-  {
+  if(confirm("Do you want your password to have special characters?")){
     // if okay
     passCondition.isSpecial = true;
   }
@@ -181,21 +160,12 @@ function passConditions(){
   }
 
   // checks if user said cancel to all
-  if(!(Object.values(passCondition).includes(true)))
-  {
+  if(!(Object.values(passCondition).includes(true))){
     alert("Please click 'OK' on at least one option.");
 
     // calls function again
     passConditions();
-
-    // test
-    console.log("All false");
-    console.log(Object.values(passCondition).includes(true));
   }
-
-  // test
-  console.log(passCondition);
-
   return;
 }
 
